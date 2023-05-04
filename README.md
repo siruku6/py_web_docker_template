@@ -5,6 +5,7 @@ This reopository can be a template for web application repositories using python
 
 ```bash
 $ git clone https://github.com/siruku6/py_web_docker_template.git
+$ cd py_web_docker_template
 $ cp .env.sample .env
 $ docker compose build
 ```
