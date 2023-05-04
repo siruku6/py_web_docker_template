@@ -9,6 +9,7 @@ pulp = "*"
 numpy = "*"
 flask = "*"
 requests = "*"
+lxml = "*"
 
 [dev-packages]
 
