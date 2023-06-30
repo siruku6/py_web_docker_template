@@ -18,4 +18,5 @@ python_version = "3.10"
 
 [scripts]
 # check = "gunicorn --check-config config.wsgi"
-flask = "flask --debug run --host 0.0.0.0"
+# flask = "flask --debug run --host 0.0.0.0"
+flask = "python src/flask_app.py"

@@ -1,3 +1,5 @@
+import os
+
 from flask import Flask, make_response, redirect, render_template, request
 import pandas as pd
 
@@ -89,3 +91,7 @@ def download():
     response.headers["Content-Type"] = "text/csv"
     response.headers["Content-Disposition"] = "attachment; filename=solution.csv"
     return response
+
+
+if __name__ == '__main__':
+    app.run(debug=True, host='0.0.0.0', port=os.environ.get('PORT','5000'))

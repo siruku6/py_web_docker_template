@@ -19,7 +19,6 @@ RUN apt -y install \
 RUN pip install --upgrade pip \
     && pip install pipenv
 
-EXPOSE 5000
 ARG workdir="opt"
 WORKDIR /${workdir}
 
