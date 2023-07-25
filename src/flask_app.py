@@ -1,6 +1,13 @@
 import os
 
-from flask import Flask, make_response, redirect, render_template, request
+from flask import (
+    Flask,
+    jsonify,
+    make_response,
+    redirect,
+    render_template,
+    request
+)
 import pandas as pd
 
 from lib.optimizers.car_student_assign_problem import CarGroupOpt
@@ -49,10 +56,19 @@ def sample():
     """APIのサンプル"""
 
     result: str = hoge()
-    response = make_response()
-    response.data: str = result
-    response.headers["Content-Type"] = "text/plain"
-    return response
+
+    # NOTE: QueryStringParameters を取得
+    query_string_content: str = request.args.get("content")
+
+    if query_string_content is not None and query_string_content == "str":
+        # strを返す
+        response = make_response()
+        response.data: str = result
+        response.headers["Content-Type"] = "text/plain"
+        return response
+    else:
+        # jsonを返す
+        return jsonify({"message": result})
 
 
 @app.route("/", methods=["GET", "POST"])
