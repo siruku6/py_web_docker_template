@@ -10,6 +10,8 @@ numpy = "*"
 flask = "*"
 requests = "*"
 lxml = "*"
+streamlit = "*"
+opencv-python = "*"
 
 [dev-packages]
 

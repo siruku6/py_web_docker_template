@@ -10,8 +10,8 @@ RUN apt -y install \
     # libpq-dev \
     # # For scikit-learn (scipy)
     # gfortran libopenblas-dev liblapack-dev \
-    # # For opencv-python
-    # libopencv-dev \
+    # For opencv-python
+    libopencv-dev \
     && apt clean \
     && rm -rf /var/lib/apt/lists/*
 
